@@ -17,7 +17,7 @@
 
     - name: Deploy custom index.html
       copy:
-        dest: /var/www/html/index.html
+        dest: /usr/share/testpage/index.html
         content: |
           <html>
           <head><title>Welcome</title></head>
