@@ -1,0 +1,23 @@
+name: Basic Package Installation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ansible:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Ansible
+        run: |
+          sudo apt update
+          sudo apt install -y ansible
+
+      - name: Run Ansible Playbook
+        run: |
+          ansible-playbook -i inventory/hosts.ini ansible/install_package.yml
