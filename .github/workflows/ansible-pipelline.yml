@@ -2,6 +2,8 @@ name: Basic Package Installation
 
 on:
   push:
+    paths:
+      - inventory/hosts.ini
     branches:
       - main
 
